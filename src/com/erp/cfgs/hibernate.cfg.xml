@@ -1,0 +1,50 @@
+ <!DOCTYPE hibernate-configuration PUBLIC
+ "-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+ "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+	   <!-- connection properties  -->
+	    <!-- <property name="connection.provider_class">org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl</property>
+	    <property name="connection.datasource">java:/comp/env/DsJndi</property> -->
+	    <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+			<property name="connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+			<property name="connection.username">system</property>
+			<property name="connection.password">oracle</property>
+	    <!-- hibernate properties --> 
+		 <property name="show_sql">true</property>
+		 <property name="format_sql">true</property>
+     	 <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+     	 <property name="hbm2ddl.auto">update</property> 
+		<!-- mapping file -->
+	<mapping class="com.erp.domain.ProductMaster"/>
+	<mapping class="com.erp.domain.ProductDataMaster"/>
+	<mapping class="com.erp.domain.ServiceMaster"/>
+	<mapping class="com.erp.domain.ServiceDataMaster"/>
+	<mapping class="com.erp.domain.CompanyMaster"/>
+	<mapping class="com.erp.domain.EmployeeMaster"/>
+	<mapping class="com.erp.domain.DepartmentMaster"/>
+	<mapping class="com.erp.domain.LoginMaster"/>
+	<mapping class="com.erp.domain.BankMaster"/>
+	<mapping class="com.erp.domain.BranchMaster"/>
+	<mapping class="com.erp.domain.RegionMaster"/>
+	<mapping class="com.erp.domain.AreaMaster"/>
+	<mapping class="com.erp.domain.CustomerMaster"/>
+	<mapping class="com.erp.domain.CustAppointMaster"/>
+	<mapping class="com.erp.domain.EmpAssignMaster"/>
+	<mapping class="com.erp.domain.IncentiveMaster"/>	
+	<mapping class="com.erp.domain.DesignationMaster"/>
+	<mapping class="com.erp.domain.LeaveMaster"/>
+	<mapping class="com.erp.domain.HolidayMaster"/>
+	<mapping class="com.erp.domain.AttendanceMaster"/>
+	<mapping class="com.erp.domain.PaymentSlipMaster"/>
+	<mapping class="com.erp.domain.VendorMaster"/>
+	<mapping class="com.erp.domain.RequirementMaster"/>
+	<mapping class="com.erp.domain.SaleMaster"/>
+	<mapping class="com.erp.domain.SaleQuotationMaster"/>
+	<mapping class="com.erp.domain.PurchaseMaster"/>
+	<mapping class="com.erp.domain.PurchaseQuotationMaster"/>
+
+		
+	</session-factory>
+</hibernate-configuration>
