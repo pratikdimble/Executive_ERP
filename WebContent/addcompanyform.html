@@ -1,0 +1,53 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/menubar.css"/>
+</head>
+<body background="img/back.jpg" >
+
+<div class="header">
+ <img src="img/newlogo.png" class="logo" style="width: 149px; height: 75px; "/>
+  <div class="header-right">
+    <a class="active" href="firstpage.jsp">Home</a>
+    <a href="firstpage.jsp">Back</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="logout.jsp">Logout</a>
+  </div>
+</div>
+
+
+		
+	<form action="./company" method="POST">
+	<font color="RED" size="5">
+	<pre>
+	<b>
+   		Company Name			:: <input type="text" name="name" required="required"><br>
+   		Company Address			:: <input type="text" name="addr" required="required"><br>
+   		Contact Number			:: <input type="text" id="mob" name="contact" required="required" pattern="[7-9]{1}[0-9]{9}" onkeypress="return IsNumeric(event);" ondrop="return false;" onpaste="return false;" title="Mobile number is only 10 digits Start with 7 or 8 or 9" ><br>
+   		<span id="error" style="color: Red; display: none">*Only digits (0-9) Start with 7 or 8 or 9</span>
+   		Fax Number			:: <input type="text" name="fax"><br>
+   		E-Mail ID			:: <input type="text" name="mail" required="required"><br>
+   		Website	 			:: <input type="text" name="web" required="required"><br>
+   		Establish Year			:: <input type="text" name="year" required="required"><br>
+  		 <input type="submit" name="operation" value="ADD">   
+  		 </b></pre>
+	</font>
+	
+	    <script type="text/javascript">
+        var specialKeys = new Array();
+        specialKeys.push(8); //Backspace
+        function IsNumeric(e) {
+            var keyCode = e.which ? e.which : e.keyCode
+            var ret = ((keyCode >= 48 && keyCode <= 57) || specialKeys.indexOf(keyCode) != -1);
+            document.getElementById("error").style.display = ret ? "none" : "inline";
+            return ret;
+        }
+    </script>
+</form>
+
+</body>
+</html>
